@@ -29,5 +29,13 @@ def get_ids_part2(filename):
                             break
     return sum_of_ids
 
+def get_ids_part2_tider(filename):
+    file = open(filename)
+    sum_of_ids = 0
+    for line in file:
+        list_of_ids = line.split(',')
+        for x in list_of_ids:
+            range_values = x.split('-')
 
-print(get_ids_part2("Day2_input"))
+
+print(get_ids_part2("short_input"))

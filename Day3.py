@@ -20,7 +20,6 @@ def turn_batteries_part2(filename):
         digit_pos = 0
         for x in range(1,13):
             if digit_pos > len(line)-12 + 1 +x:
-                print(digit_pos, x)
                 digits.append(line[digit_pos:])
                 break
             first_search = line[digit_pos:(len(line)-12)+x]
@@ -28,7 +27,6 @@ def turn_batteries_part2(filename):
             if len(digits) == 12:
                 break
             digit_pos = first_search.index(digits[x-1]) + 1 + digit_pos
-        print(digits)
         total_joltage += int(''.join(map(str, digits)))
 
     return total_joltage
